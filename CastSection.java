@@ -16,7 +16,7 @@ class CastSection extends ArrayList {
 
    public CastSection(Exporter3DA exporter, class_411 document, class_476 performerManager) {
       this.exporter = exporter;
-      this.sectionHeader = new byte[]{67, 65, 83, 84};
+      this.sectionHeader = new byte[]{67, 65, 83, 84}; // CAST
       class_5294 castMembers = document.method_3805();
       castMembers.method_34031(document);
 

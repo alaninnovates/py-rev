@@ -17,10 +17,10 @@ class PositionVisuals {
    private char field_4956;
    // $VF: renamed from: a i.l
    // $VF: synthetic field
-   final Exporter3DA field_4957;
+   final Exporter3DA exporter;
 
    public PositionVisuals(Exporter3DA var1, class_411 var2, class_394 var3) {
-      this.field_4957 = var1;
+      this.exporter = var1;
       this.field_4953 = var3.method_3485();
       this.field_4954 = var3.field_1779;
       this.field_4955 = var3.method_3494(var2);
@@ -39,10 +39,10 @@ class PositionVisuals {
 
    // $VF: renamed from: b () void
    private void method_6948() {
-      Exporter3DA.staticWriteShortInt(this.field_4957, (short)this.field_4953);
-      Exporter3DA.staticWritePoint(this.field_4957, this.field_4954);
-      Exporter3DA.staticWriteColor(this.field_4957, this.field_4955);
-      Exporter3DA.staticWriteChar(this.field_4957, this.field_4956);
+      Exporter3DA.staticWriteShortInt(this.exporter, (short)this.field_4953);
+      Exporter3DA.staticWritePoint(this.exporter, this.field_4954);
+      Exporter3DA.staticWriteColor(this.exporter, this.field_4955);
+      Exporter3DA.staticWriteChar(this.exporter, this.field_4956);
    }
 
    // $VF: renamed from: a (i.r) int

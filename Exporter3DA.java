@@ -69,11 +69,11 @@ public class Exporter3DA {
    // $VF: renamed from: c () void
    private void method_6894() {
       if (this.field_4921 != null) {
-         this.field_4921.method_6937();
+         this.field_4921.initializeHeader();
       }
 
       if (this.field_4922 != null) {
-         this.field_4922.method_6933();
+         this.field_4922.initializeGeneralInfo();
       }
 
       if (this.field_4923 != null) {
@@ -89,7 +89,7 @@ public class Exporter3DA {
       }
 
       if (this.field_4926 != null) {
-         this.field_4926.method_34523();
+         this.field_4926.initializePages();
       }
 
       this.field_4921 = null;
@@ -107,12 +107,12 @@ public class Exporter3DA {
       try {
          var1 = class_285.method_2398(this.field_4916) + System.currentTimeMillis() + ".tmp";
          this.field_4920 = new DataOutputStream(new FileOutputStream(var1));
-         Header3DA.method_6939(this.field_4921);
-         GeneralInfo.method_6936(this.field_4922);
+         Header3DA.write(this.field_4921);
+         GeneralInfo.write(this.field_4922);
          GridPattern.method_6932(this.field_4923);
          CastSection.write(this.field_4924);
          PerformerTab.write(this.field_4925);
-         PageSection.method_34526(this.field_4926);
+         PageSection.write(this.field_4926);
          this.writeHeaderAndData(this.field_4915, 0);
          this.field_4920.close();
          this.field_4920 = null;

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 class PositionList extends ArrayList {
    // $VF: renamed from: a i.l
    // $VF: synthetic field
-   final Exporter3DA field_33471;
+   final Exporter3DA exporter;
 
    public PositionList(Exporter3DA var1, class_411 var2, class_5289 var3) {
-      this.field_33471 = var1;
+      this.exporter = var1;
 
       for (class_394 var5 : var3) {
          this.add(new PositionVisuals(var1, var2, var5));
@@ -42,7 +42,7 @@ class PositionList extends ArrayList {
 
    // $VF: renamed from: b () void
    private void method_34520() {
-      Exporter3DA.staticWriteShortInt(this.field_33471, this.size());
+      Exporter3DA.staticWriteShortInt(this.exporter, this.size());
 
       for (PositionVisuals var2 : this) {
          PositionVisuals.method_6950(var2);

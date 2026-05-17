@@ -14,7 +14,7 @@ class PerformerTab extends ArrayList {
 
    public PerformerTab(Exporter3DA exporter, class_411 document) {
       this.exporter = exporter;
-      this.sectionHeader = new byte[]{80, 84, 65, 66};
+      this.sectionHeader = new byte[]{80, 84, 65, 66}; // PTAB
 
       for (class_395 var5 : document.method_3831().method_33463(0)) {
          if (!var5.method_3613()) {

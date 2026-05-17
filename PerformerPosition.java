@@ -25,10 +25,10 @@ class PerformerPosition {
    private String field_4951;
    // $VF: renamed from: a i.l
    // $VF: synthetic field
-   final Exporter3DA field_4952;
+   final Exporter3DA exporter;
 
    public PerformerPosition(Exporter3DA var1, class_419 var2) {
-      this.field_4952 = var1;
+      this.exporter = var1;
       this.field_4951 = "";
       this.field_4944 = (short)var2.method_4232();
       if (var2.method_4235(4)) {
@@ -61,19 +61,19 @@ class PerformerPosition {
 
    // $VF: renamed from: a () int
    private int method_6941() {
-      return 30 + Exporter3DA.staticCalculateUTF8StringSize(this.field_4952, this.field_4951);
+      return 30 + Exporter3DA.staticCalculateUTF8StringSize(this.exporter, this.field_4951);
    }
 
    // $VF: renamed from: b () void
    private void method_6942() {
-      Exporter3DA.staticWriteShortInt(this.field_4952, (short)this.field_4946);
-      Exporter3DA.staticWriteShortInt(this.field_4952, this.field_4944);
-      Exporter3DA.staticWriteShortInt(this.field_4952, this.field_4945);
-      Exporter3DA.staticWritePoint(this.field_4952, this.field_4947);
-      Exporter3DA.staticWritePoint(this.field_4952, this.field_4948);
-      Exporter3DA.staticWriteFloat(this.field_4952, this.field_4949);
-      Exporter3DA.staticWriteFloat(this.field_4952, this.field_4950);
-      Exporter3DA.staticWriteUTF8String(this.field_4952, this.field_4951);
+      Exporter3DA.staticWriteShortInt(this.exporter, (short)this.field_4946);
+      Exporter3DA.staticWriteShortInt(this.exporter, this.field_4944);
+      Exporter3DA.staticWriteShortInt(this.exporter, this.field_4945);
+      Exporter3DA.staticWritePoint(this.exporter, this.field_4947);
+      Exporter3DA.staticWritePoint(this.exporter, this.field_4948);
+      Exporter3DA.staticWriteFloat(this.exporter, this.field_4949);
+      Exporter3DA.staticWriteFloat(this.exporter, this.field_4950);
+      Exporter3DA.staticWriteUTF8String(this.exporter, this.field_4951);
    }
 
    // $VF: renamed from: a (i.t) ai.c
