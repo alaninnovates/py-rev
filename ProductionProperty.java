@@ -4,7 +4,7 @@ import ac.class_395;
 import ac.class_5386;
 
 // $VF: renamed from: i.o
-class PerformerProperties {
+class ProductionProperty {
    // $VF: renamed from: a short
    private short field_4961;
    // $VF: renamed from: a java.lang.String
@@ -27,7 +27,7 @@ class PerformerProperties {
    // $VF: synthetic field
    final Exporter3DA exporter;
 
-   public PerformerProperties(Exporter3DA exporter, class_395 var2) {
+   public ProductionProperty(Exporter3DA exporter, class_395 var2) {
       this.exporter = exporter;
       this.field_4961 = (short)var2.field_1807; // id
       this.field_4962 = var2.field_1808; //
@@ -72,13 +72,13 @@ class PerformerProperties {
 
    // $VF: renamed from: a (i.o) int
    // $VF: synthetic method
-   static int staticCalculateSize(PerformerProperties var0) {
+   static int staticCalculateSize(ProductionProperty var0) {
       return var0.calculateSize();
    }
 
    // $VF: renamed from: a (i.o) void
    // $VF: synthetic method
-   static void staticWriteData(PerformerProperties var0) {
+   static void staticWriteData(ProductionProperty var0) {
       var0.writeData();
    }
 }

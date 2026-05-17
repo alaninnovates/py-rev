@@ -36,7 +36,7 @@ public class Exporter3DA {
    // $VF: renamed from: a i.m
    private CastSection field_4924;
    // $VF: renamed from: a i.y
-   private PerformerTab field_4925;
+   private ProductionTab field_4925;
    // $VF: renamed from: a i.q
    private PageSection field_4926;
    // $VF: renamed from: a ac.Z
@@ -62,7 +62,7 @@ public class Exporter3DA {
       this.field_4922 = new GeneralInfo(this, this.field_4918);
       this.field_4923 = new GridPattern(this, this.field_4918);
       this.field_4924 = new CastSection(this, this.field_4918, this.field_4919);
-      this.field_4925 = new PerformerTab(this, this.field_4918);
+      this.field_4925 = new ProductionTab(this, this.field_4918);
       this.field_4926 = new PageSection(this, this.field_4918);
    }
 
@@ -111,7 +111,7 @@ public class Exporter3DA {
          GeneralInfo.write(this.field_4922);
          GridPattern.write(this.field_4923);
          CastSection.write(this.field_4924);
-         PerformerTab.write(this.field_4925);
+         ProductionTab.write(this.field_4925);
          PageSection.write(this.field_4926);
          this.writeHeaderAndData(this.field_4915, 0);
          this.field_4920.close();
