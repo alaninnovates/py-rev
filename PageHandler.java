@@ -6,36 +6,36 @@ import ac.class_5289;
 // $VF: renamed from: i.p
 class PageHandler {
    // $VF: renamed from: a i.s
-   private PositionList positionList;
+   private VisualPositionList visualPositionList;
    // $VF: renamed from: a i.u
-   private PanelList panelList;
+   private PerformerPositionList performerPositionList;
    // $VF: renamed from: a i.l
    // $VF: synthetic field
    final Exporter3DA exporter;
 
    public PageHandler(Exporter3DA var1, class_411 var2, class_5289 var3) {
       this.exporter = var1;
-      this.positionList = new PositionList(var1, var2, var3);
-      this.panelList = new PanelList(var1, var3);
+      this.visualPositionList = new VisualPositionList(var1, var2, var3);
+      this.performerPositionList = new PerformerPositionList(var1, var3);
    }
 
    // $VF: renamed from: a () void
    public void cleanup() {
-      this.positionList.method_34518();
-      this.positionList = null;
-      this.panelList.method_34513();
-      this.panelList = null;
+      this.visualPositionList.cleanup();
+      this.visualPositionList = null;
+      this.performerPositionList.cleanup();
+      this.performerPositionList = null;
    }
 
    // $VF: renamed from: a () int
    private int calculatePageSize() {
-      return PositionList.method_34521(this.positionList) + PanelList.method_34516(this.panelList);
+      return VisualPositionList.staticCalculateSectionSize(this.visualPositionList) + PerformerPositionList.staticCalculateSectionSize(this.performerPositionList);
    }
 
    // $VF: renamed from: b () void
    private void write() {
-      PositionList.method_34522(this.positionList);
-      PanelList.method_34517(this.panelList);
+      VisualPositionList.write(this.visualPositionList);
+      PerformerPositionList.write(this.performerPositionList);
    }
 
    // $VF: renamed from: a (i.p) int

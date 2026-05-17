@@ -54,18 +54,18 @@ class PerformerPosition {
    }
 
    // $VF: renamed from: a () void
-   public void method_6940() {
+   public void cleanup() {
       this.field_4947 = null;
       this.field_4948 = null;
    }
 
    // $VF: renamed from: a () int
-   private int method_6941() {
+   private int calculateSectionSize() {
       return 30 + Exporter3DA.staticCalculateUTF8StringSize(this.exporter, this.field_4951);
    }
 
    // $VF: renamed from: b () void
-   private void method_6942() {
+   private void writeSectionData() {
       Exporter3DA.staticWriteShortInt(this.exporter, (short)this.field_4946);
       Exporter3DA.staticWriteShortInt(this.exporter, this.field_4944);
       Exporter3DA.staticWriteShortInt(this.exporter, this.field_4945);
@@ -84,13 +84,13 @@ class PerformerPosition {
 
    // $VF: renamed from: a (i.t) int
    // $VF: synthetic method
-   static int method_6944(PerformerPosition var0) {
-      return var0.method_6941();
+   static int staticCalculateSectionSize(PerformerPosition var0) {
+      return var0.calculateSectionSize();
    }
 
    // $VF: renamed from: a (i.t) void
    // $VF: synthetic method
-   static void method_6945(PerformerPosition var0) {
-      var0.method_6942();
+   static void write(PerformerPosition var0) {
+      var0.writeSectionData();
    }
 }

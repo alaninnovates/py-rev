@@ -6,7 +6,7 @@ import ai.class_1657;
 import java.awt.Color;
 
 // $VF: renamed from: i.r
-class PositionVisuals {
+class VisualPosition {
    // $VF: renamed from: a long
    private long field_4953;
    // $VF: renamed from: a ai.c
@@ -19,7 +19,7 @@ class PositionVisuals {
    // $VF: synthetic field
    final Exporter3DA exporter;
 
-   public PositionVisuals(Exporter3DA var1, class_411 var2, class_394 var3) {
+   public VisualPosition(Exporter3DA var1, class_411 var2, class_394 var3) {
       this.exporter = var1;
       this.field_4953 = var3.method_3485();
       this.field_4954 = var3.field_1779;
@@ -28,17 +28,17 @@ class PositionVisuals {
    }
 
    // $VF: renamed from: a () void
-   public void method_6946() {
+   public void cleanup() {
       this.field_4954 = null;
    }
 
    // $VF: renamed from: a () int
-   private int method_6947() {
+   private int calculateSectionSize() {
       return 14;
    }
 
    // $VF: renamed from: b () void
-   private void method_6948() {
+   private void writeSectionData() {
       Exporter3DA.staticWriteShortInt(this.exporter, (short)this.field_4953);
       Exporter3DA.staticWritePoint(this.exporter, this.field_4954);
       Exporter3DA.staticWriteColor(this.exporter, this.field_4955);
@@ -47,13 +47,13 @@ class PositionVisuals {
 
    // $VF: renamed from: a (i.r) int
    // $VF: synthetic method
-   static int method_6949(PositionVisuals var0) {
-      return var0.method_6947();
+   static int staticCalculateSectionSize(VisualPosition var0) {
+      return var0.calculateSectionSize();
    }
 
    // $VF: renamed from: a (i.r) void
    // $VF: synthetic method
-   static void method_6950(PositionVisuals var0) {
-      var0.method_6948();
+   static void write(VisualPosition var0) {
+      var0.writeSectionData();
    }
 }
