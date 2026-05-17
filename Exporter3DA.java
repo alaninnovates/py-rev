@@ -77,7 +77,7 @@ public class Exporter3DA {
       }
 
       if (this.field_4923 != null) {
-         this.field_4923.method_6927();
+         this.field_4923.initializeGridPattern();
       }
 
       if (this.field_4924 != null) {
@@ -109,7 +109,7 @@ public class Exporter3DA {
          this.field_4920 = new DataOutputStream(new FileOutputStream(var1));
          Header3DA.write(this.field_4921);
          GeneralInfo.write(this.field_4922);
-         GridPattern.method_6932(this.field_4923);
+         GridPattern.write(this.field_4923);
          CastSection.write(this.field_4924);
          PerformerTab.write(this.field_4925);
          PageSection.write(this.field_4926);

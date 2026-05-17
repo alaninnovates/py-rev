@@ -9,7 +9,7 @@ import java.util.Iterator;
 // $VF: renamed from: i.x
 class GridPattern {
    // $VF: renamed from: a byte[]
-   private byte[] field_4928;
+   private byte[] sectionHeader;
    // $VF: renamed from: a short
    private short field_4929;
    // $VF: renamed from: a java.lang.String
@@ -18,31 +18,31 @@ class GridPattern {
    private int field_4931;
    // $VF: renamed from: a i.l
    // $VF: synthetic field
-   final Exporter3DA field_4932;
+   final Exporter3DA exporter;
 
    public GridPattern(Exporter3DA var1, class_411 var2) {
-      this.field_4932 = var1;
-      this.field_4928 = new byte[]{71, 82, 68, 49}; // GRD1
-      this.field_4929 = this.method_6930(var2);
-      this.field_4931 = var2.method_3821().size();
+      this.exporter = var1;
+      this.sectionHeader = new byte[]{71, 82, 68, 49}; // GRD1
+      this.field_4929 = this.method_6930(var2); // seems to be some kind of known grid pattern? 00 00 in the 3da file given
+      this.field_4931 = var2.method_3821().size(); // some size variable?
       this.field_4930 = this.method_6931(var2);
    }
 
    // $VF: renamed from: a () void
-   public void method_6927() {
+   public void initializeGridPattern() {
    }
 
    // $VF: renamed from: a () int
-   private int method_6928() {
-      return 4 + Exporter3DA.staticCalculateStringSize(this.field_4932, this.field_4930);
+   private int calculateSectionSize() {
+      return 4 + Exporter3DA.staticCalculateStringSize(this.exporter, this.field_4930);
    }
 
    // $VF: renamed from: b () void
-   private void method_6929() {
-      Exporter3DA.staticWriteHeaderAndData(this.field_4932, this.field_4928, this.method_6928());
-      Exporter3DA.staticWriteShortInt(this.field_4932, this.field_4929);
-      Exporter3DA.staticWriteShortInt(this.field_4932, this.field_4931);
-      Exporter3DA.staticWriteString(this.field_4932, this.field_4930);
+   private void writeSectionData() {
+      Exporter3DA.staticWriteHeaderAndData(this.exporter, this.sectionHeader, this.calculateSectionSize());
+      Exporter3DA.staticWriteShortInt(this.exporter, this.field_4929);
+      Exporter3DA.staticWriteShortInt(this.exporter, this.field_4931);
+      Exporter3DA.staticWriteString(this.exporter, this.field_4930);
    }
 
    // $VF: renamed from: a (ac.u) short
@@ -252,7 +252,7 @@ class GridPattern {
 
    // $VF: renamed from: a (i.x) void
    // $VF: synthetic method
-   static void method_6932(GridPattern var0) {
-      var0.method_6929();
+   static void write(GridPattern var0) {
+      var0.writeSectionData();
    }
 }
