@@ -7,14 +7,14 @@ import java.util.ArrayList;
 // $VF: renamed from: i.q
 class PageSection extends ArrayList {
    // $VF: renamed from: a byte[]
-   private byte[] field_33472;
+   private byte[] sectionHeader;
    // $VF: renamed from: a i.l
    // $VF: synthetic field
-   final Exporter3DA field_33473;
+   final Exporter3DA exporter;
 
    public PageSection(Exporter3DA var1, class_411 var2) {
-      this.field_33473 = var1;
-      this.field_33472 = new byte[]{80, 65, 71, 69};
+      this.exporter = var1;
+      this.sectionHeader = new byte[]{80, 65, 71, 69}; // PAGE
 
       for (class_5289 var5 : var2.method_3830()) {
          this.add(new PageHandler(var1, var2, var5));
@@ -22,39 +22,39 @@ class PageSection extends ArrayList {
    }
 
    // $VF: renamed from: a () void
-   public void method_34523() {
+   public void initializePages() {
       for (PageHandler var2 : this) {
-         var2.method_6951();
+         var2.cleanup();
       }
 
       this.clear();
    }
 
    // $VF: renamed from: a () int
-   private int method_34524() {
+   private int calculatePagesSize() {
       int var1 = 0;
       var1 += 2;
 
       for (PageHandler var3 : this) {
-         var1 += PageHandler.method_6954(var3);
+         var1 += PageHandler.staticCalculatePageSize(var3);
       }
 
       return var1;
    }
 
    // $VF: renamed from: b () void
-   private void method_34525() {
-      Exporter3DA.staticWriteHeaderAndData(this.field_33473, this.field_33472, this.method_34524());
-      Exporter3DA.staticWriteShortInt(this.field_33473, (short)this.size());
+   private void writePageData() {
+      Exporter3DA.staticWriteHeaderAndData(this.exporter, this.sectionHeader, this.calculatePagesSize());
+      Exporter3DA.staticWriteShortInt(this.exporter, (short)this.size());
 
       for (PageHandler var2 : this) {
-         PageHandler.method_6955(var2);
+         PageHandler.staticWrite(var2);
       }
    }
 
    // $VF: renamed from: a (i.q) void
    // $VF: synthetic method
-   static void method_34526(PageSection var0) {
-      var0.method_34525();
+   static void write(PageSection var0) {
+      var0.writePageData();
    }
 }
